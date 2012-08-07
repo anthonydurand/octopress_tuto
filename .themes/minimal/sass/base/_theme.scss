@@ -1,0 +1,57 @@
+$img-border: inline-image('dotted-border.png');
+
+// Main Link Colors
+$link-color: #F02311 !default;
+$link-color-hover: lighten($link-color,10) !default;
+$link-color-visited: $link-color !default;
+$link-color-active: $link-color !default;
+
+// Main Section Colors
+$main-bg: #FFFFFF !default;
+$page-bg: #FFFFFF !default;
+$article-border: #eeeeee !default;
+
+$header-bg: #FFFFFF !default;
+$header-border: darken($header-bg, 15) !default;
+$title-color: #F02311 !default;
+$subtitle-color: lighten($title-color,10) !default;
+
+$text-color: #222 !default;
+$text-color-light: #aaa !default;
+$type-border: #ddd !default;
+
+/* Navigation */
+$nav-bg: #fff !default;
+$nav-color: darken($nav-bg, 38) !default;
+$nav-color-hover: darken($nav-color, 25) !default;
+$nav-placeholder: desaturate(darken($nav-bg, 10), 15) !default;
+
+$footer-color: #888 !default;
+$footer-bg: #FFF !default;
+$footer-color-hover: darken($footer-color, 10) !default;
+$footer-link-color: darken($footer-bg, 38) !default;
+$footer-link-color-hover: darken($footer-color, 25) !default;
+$page-border-bottom: darken($footer-bg, 5) !default;
+
+
+/* Core theme application */
+
+a {
+  @include link-colors($link-color, $hover: $link-color-hover, $focus: $link-color-hover, $visited: $link-color-visited, $active: $link-color-active);
+}
+a {
+  @include transition(color .2s);
+}
+
+html {
+  background: $main-bg image-url('line-tile.png') top left;
+}
+body {
+  > div {
+    background: $page-bg ;
+    border-bottom: 1px solid $page-border-bottom;
+    > div {
+      background: $main-bg ;
+    }
+  }
+}
